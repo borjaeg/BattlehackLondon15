@@ -1,2 +1,4 @@
-# BattlehackLondon15
-Code developed during Battlehack London 2015
+## Developers
+David De Juan
+Juan Gallego
+Borja Espejo

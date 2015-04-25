@@ -1,1 +1,2 @@
-web: gunicorn show_challenges:app --log-file=-
+web: gunicorn app:app
+init: python db_create.py

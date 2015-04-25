@@ -16,9 +16,7 @@ app = Flask(__name__)
 # Functions
 @app.route("/client_token", methods=["GET"])
 def client_token():
-    return braintree.ClientToken.generate({
-        "customer_id": a_customer_id
-  })
+    return braintree.ClientToken.generate()
 
 @app.route("/purchases", methods=["POST"])
 def create_purchase():

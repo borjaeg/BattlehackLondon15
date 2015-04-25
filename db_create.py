@@ -1,6 +1,9 @@
 import psycopg2
+import os
 
-conn = psycopg2.connect("dbname='challenge_for_people' user='root' host='localhost' password='root'")
+host = os.environ['DATABASE_URL']
+
+conn = psycopg2.connect("dbname='challenge_for_people' user='root' host= " + host + " password='root'")
 cursor = conn.cursor()
 query = """
 CREATE DATABASE challenges;

@@ -22,11 +22,13 @@ braintree.Configuration.configure(
 	'beae8f107b64b387a434dbe4b1686a16'
 )
 
+host = os.environ['DATABASE_URL']
+
 
 @app.route("/")
 def show_challenges():
 	try:
-		conn = psycopg2.connect("dbname='challenge_for_people' user='root' host='localhost' password='root'")
+		conn = psycopg2.connect("dbname='challenge_for_people' user='root' host= " + host + " password='root'")
 		cursor = conn.cursor()
 		query = "SELECT name FROM challenges;"
 		cursor.execute(query)
@@ -48,7 +50,7 @@ def projects():
 @app.route("/challenge/<challenge>")
 def challenge(challenge):
 	#project = request.args.get('project', '')
-	conn = psycopg2.connect("dbname='challenge_for_people' user='root' host='localhost' password='root'")
+	conn = psycopg2.connect("dbname='challenge_for_people' user='root' host= " + host + " password='root'")
 	cursor = conn.cursor()
 	token = client_token()
 	print token

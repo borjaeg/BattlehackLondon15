@@ -81,7 +81,7 @@ def become_hero():
 
 @app.route("/challenge/<challenge>")
 def challenge(challenge):
-	'''
+	
 	urlparse.uses_netloc.append("postgres")
 	url = urlparse.urlparse(os.environ["DATABASE_URL"])
 	conn = psycopg2.connect(
@@ -92,9 +92,9 @@ def challenge(challenge):
 		port=url.port
 	)
 	
-	'''
+	
 	#project = request.args.get('project', '')
-	conn = psycopg2.connect("dbname='challenge_for_people' user='root' host= " + host + " password='root'")
+	#conn = psycopg2.connect("dbname='challenge_for_people' user='root' host= " + host + " password='root'")
 	cursor = conn.cursor()
 	token = client_token()
 	print token

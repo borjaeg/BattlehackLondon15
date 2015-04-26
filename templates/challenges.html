@@ -2,6 +2,11 @@
 {% block content %}
 <div class="container" data-url="{{ url_for('projects') }}">
 	<div class="row">
+		<div class="col-xs-offset-2 col-xs-8 col-md-offset-5 col-md-2">
+			<button type="button" class="btn btn-primary btn-lg hero">  Become a hero </button>
+		</div>
+	</div>
+	<div class="row">
 		<div class="col-md-12">
 			<h3 class = "slogan">The platform that helps you to become a real hero</h3>
 		</div>
@@ -18,7 +23,7 @@
 	</div>
 </div>
 <div class="container" id ="where">
-  <div class="map" id="map">
-  </div>
+	<div class="map" id="map">
+	</div>
 </div>
 {% endblock %}

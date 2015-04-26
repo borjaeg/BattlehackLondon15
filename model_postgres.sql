@@ -8,8 +8,12 @@ CREATE TABLE challenges(
   donators INT DEFAULT 0,
   levying FLOAT DEFAULT 0,
   proof VARCHAR(500),
+  challengerName TEXT, -- NOT NULL,
+  challengerPhoto TEXT, -- NOT NULL,
+  longitud FLOAT,
+  latitud  FLOAT, 
   PRIMARY KEY(id_challenge)
 );
 
-INSERT INTO challenges(name, description, donators, levying, proof) VALUES ('Run For Ebro', 'Ebro river has had problems in the last month because of the huge amount of rain. I want to help my Zaragoza friends running 30 km. Do you want to run with me? Donate!', 52, 5000, 'https://www.youtube.com/embed/HgzGwKwLmgM');
-INSERT INTO challenges(name, description, donators, levying, proof) VALUES ('Hack For Ebola', 'Ebola is an important disease. Hack with me', 51042, 1500000, 'https://www.youtube.com/embed/zO6D_BAuYCI');
+INSERT INTO challenges(name, description, donators, levying, proof) VALUES ('Running against the current', 'Last month\'s rains and the melting of the snow has caused floods in the riverside of the Ebro in Zaragoza. The farmers of that zone are now in a very bad situation and they need our help. I will be running a 10 kilometers for every 100 euros we raise, giving all the money that I get thanks to sponsors and prizes to help them.', 52, 5000, 'https://www.youtube.com/embed/HgzGwKwLmgM', 'Oliver Atom', 'http://images.teinteresa.es/deportes/Oliver-realiza-disparo_TINIMA20120619_0426_18.jpg', 41.39, 0.52);
+INSERT INTO challenges(name, description, donators, levying, proof) VALUES ('Hack For Ebola', 'The Ebola upbreak in Africa has already cost thousands of lifes. Join me in my next hackathon and I will give all tha money you have donated ro de Red Cross', 51042, 1500000, 'https://www.youtube.com/embed/zO6D_BAuYCI', 'Borja Espejo', 'https://pbs.twimg.com/profile_images/572892628094423040/sja06mu9_400x400.jpeg', NULL, NULL);

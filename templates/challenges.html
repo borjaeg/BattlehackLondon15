@@ -3,13 +3,25 @@
 <div class="container" data-url="{{ url_for('projects') }}">
 	<div class="row">
 		<div class="col-md-12">
-			<h1 style="text-align:center; padding-bottom: 5%;">Current Challenges</h1>
+			<h2 style="text-align:center;">Challenge for Charity</h2>
+		</div>
+		<div class="col-md-12">
+			<h3 class = "slogan">The platform that helps you to become a real hero</h3>
+		</div>
+	</div>	
+	<div class= "row" id="challenges_list">
+		<div class="col-md-12">
+			<h3 style="text-align:center; margin-bottom:2%;">Current Challenges</h3>
 		</div>
 		{% for challenge in challenges %}
-		<div class="col-xs-18 col-md-12">
+		<div class="col-xs-18 col-md-4">
 			<button type="button" class="btn btn-primary btn-lg challenge">  {{ challenge[0] }} </button>
 		</div>
 		{% endfor %}		
 	</div>
+</div>
+<div class="container" id ="where">
+  <div class="map" id="map">
+  </div>
 </div>
 {% endblock %}

@@ -2,13 +2,16 @@
 {% block content %}
 <div class="container">
 	<div class="row">
+		<div class="col-md-12 metadata">
+			<h3 style="text-align:center; margin-top: 5%;"> Name</h3>
+		</div>			
 		<div class="col-md-12">
-			<h1 style="text-align:center; padding-bottom: 5%;"> {{ challenge[1] }}</h1>
+			<h1 id="challenge_name" style="text-align:center; margin-top: 5%;"> {{ challenge[1] }}</h1>
 		</div>	
 	</div>
 	<div class="row">
 		<div class="col-md-12">
-			<h4 style="text-align:center; padding-bottom: 5%;"> Challenge Description</h4>
+			<h3 class="metadata" style="text-align:center; padding-top: 5%;"> Challenge Description</h3>
 		</div>	
 	</div>
 	<div class="row">
@@ -17,24 +20,24 @@
 		</div>	
 	</div>
 	<div class="row">
-		<div class="col-md-12">
-			<h4 style="text-align:center; padding-bottom: 5%;"> Proof</h4>
+		<div class="col-md-9">
+			<h3 class="metadata" style="text-align:center; padding-bottom: 5%;"> Follow the challenge ;-) </h3>
 		</div>	
 	</div>
 	<div class="row">
-		<div class="col-md-9">
+		<div class="col-xs-18 col-md-9">
 			<iframe src="{{ challenge[7] }}" width="100%" height="75%" frameborder="0">Your browser does not support iframes.</iframe>
-			<!--<iframe width="100%" height="100%" src="http://livestre:am/565Nu" frameborder="0" allowfullscreen></iframe>-->
 		</div>	
-		<div class="col-md-3">
-			<p> Start Date: <span> 12-06-2015</span> </p>
-			<p> End Date: <span> 13-06-2015</span> </p>
-			<p> Number of donations: <span> {{ challenge[5] }} </span> </p>
-			<p> Income: <span> {{ challenge[6] }} </span> <span>$</span></p>
+		<div class="col-xs-18 col-md-3">
+			<h3 class="metadata"> Information </h3>
+			<p> <b>Start Date: </b><span> 12-06-2015</span> </p>
+			<p><b> End Date: </b><span> 13-06-2015</span> </p>
+			<p> <b>Number of donations: </b><span> {{ challenge[5] }} </span> </p>
+			<p> <b>Income: </b><span> {{ challenge[6] }} </span> <span>$</span></p>
 			<!--<form id="checkout" method="post" action="/checkout">-->
 			<form id="checkout" method="post" action="/checkout">
 				<div id="dropin"></div>
-				<input type="submit" value="Pay $10">
+				<input id="pay" type="submit" value="Pay $10">
 			</form>
 			<!--<p> <a href="/donate"><button type="button" class="btn btn-primary btn-lg button_donate">  Donate </button></a></p>-->
 		</div>	

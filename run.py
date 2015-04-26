@@ -29,7 +29,17 @@ host = os.environ['DATABASE_URL']
 @app.route("/")
 def show_challenges():
 	try:
-		conn = psycopg2.connect("dbname='challenge_for_people' user='root' host= " + host + " password='root'")
+		urlparse.uses_netloc.append("postgres")
+		url = urlparse.urlparse(os.environ["DATABASE_URL"])
+
+		conn = psycopg2.connect(
+		database=url.path[1:],
+		user=url.username,
+		password=url.password,
+		host=url.hostname,
+		port=url.port
+	)
+		#conn = psycopg2.connect("dbname='challenge_for_people' user='root' host= " + host + " password='root'")
 		cursor = conn.cursor()
 		query = "SELECT name FROM challenges;"
 		cursor.execute(query)
@@ -50,6 +60,17 @@ def projects():
 
 @app.route("/challenge/<challenge>")
 def challenge(challenge):
+	urlparse.uses_netloc.append("postgres")
+	url = urlparse.urlparse(os.environ["DATABASE_URL"])
+
+	conn = psycopg2.connect(
+		database=url.path[1:],
+		user=url.username,
+		password=url.password,
+		host=url.hostname,
+		port=url.port
+	)
+	
 	#project = request.args.get('project', '')
 	conn = psycopg2.connect("dbname='challenge_for_people' user='root' host= " + host + " password='root'")
 	cursor = conn.cursor()

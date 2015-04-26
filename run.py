@@ -74,7 +74,7 @@ def challenge(challenge):
 	)
 
 	#project = request.args.get('project', '')
-	conn = psycopg2.connect("dbname='challenge_for_people' user='root' host= " + host + " password='root'")
+	#conn = psycopg2.connect("dbname='challenge_for_people' user='root' host= " + host + " password='root'")
 	cursor = conn.cursor()
 	token = client_token()
 	print token

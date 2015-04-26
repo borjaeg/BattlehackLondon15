@@ -17,10 +17,10 @@ conn = psycopg2.connect(
 
 #conn = psycopg2.connect("dbname='challenge_for_people' user='root' host= " + host + " password='root'")
 cursor = conn.cursor()
-query = "CREATE DATABASE challenges;"
-cursor.execute(query)
-query="USE challenges;"
-cursor.execute(query)
+#query = "CREATE DATABASE challenges;"
+#cursor.execute(query)
+#query="USE challenges;"
+#cursor.execute(query)
 query="DROP TABLE IF EXISTS challenges;"
 cursor.execute(query)
 query="""CREATE TABLE challenges(

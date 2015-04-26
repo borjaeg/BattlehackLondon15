@@ -1,5 +1,4 @@
 from flask import Flask, render_template, redirect, url_for, session, jsonify
-#from flaskext.mysql import MySQL
 import psycopg2
 import logging
 import braintree
@@ -7,16 +6,9 @@ from flask import request
 import os
 import urlparse
 
-
-#mysql = MySQL()
 app = Flask(__name__)
 app.debug = True
 app.secret_key = 'F12Zr47j\3yX R~X@H!jmM]Lwf/,?KT'
-#app.config['MYSQL_DATABASE_USER'] = 'root'
-#app.config['MYSQL_DATABASE_PASSWORD'] = ''
-#app.config['MYSQL_DATABASE_DB'] = 'challenge_for_people'
-#app.config['MYSQL_DATABASE_HOST'] = 'localhost'
-#mysql.init_app(app)
 braintree.Configuration.configure(
 	braintree.Environment.Sandbox,
 	'xzk9p3947gggzsgt',
@@ -25,8 +17,8 @@ braintree.Configuration.configure(
 )
 
 # Uncomment when deploy to heroku
-#host = os.environ['DATABASE_URL']
-host = 'localhost'
+host = os.environ['DATABASE_URL']
+#host = 'localhost'
 #global_challenge = ''
 
 
@@ -129,7 +121,7 @@ def create_checkout():
 		host=url.hostname,
 		port=url.port
 	)
-	
+
 	#conn = psycopg2.connect("dbname='challenge_for_people' user='root' host= " + host + " password='root'")
 	print "global challenge %s" % session['challenge']
 	query = "UPDATE challenges SET levying = levying + %d, donators = donators + 1 WHERE name = '%s'" % (int(amount), session['challenge'])

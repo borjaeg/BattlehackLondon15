@@ -40,5 +40,5 @@ query="INSERT INTO challenges(name, description, donators, levying, proof) VALUE
 cursor.execute(query)
 query="INSERT INTO challenges(name, description, donators, levying, proof) VALUES ('Hack For Ebola', 'Ebola is an important disease. Hack with me', 51042, 1500000, 'https://www.youtube.com/embed/zO6D_BAuYCI');"
 cursor.execute(query)
-
+conn.commit()
 conn.close()

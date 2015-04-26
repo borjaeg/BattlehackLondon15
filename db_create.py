@@ -36,7 +36,7 @@ query="""CREATE TABLE challenges(
 );
 """
 cursor.execute(query)
-query="INSERT INTO challenges(name, description, donators, levying, proof) VALUES ('Run For Ebro', 'Ebro river has had problems in the last month because of the huge amount of rain. I want to help my Zaragoza friends running 30 km. Do you want to run with me? Donate!', 52, 5000, 'https://www.youtube.com/embed/HgzGwKwLmgM');"
+query="INSERT INTO challenges(name, description, donators, levying, proof) VALUES ('Run For Ebro', 'Ebro river has had problems in the last month because of the huge amount of rain. I want to help my Zaragoza friends running 30 km. Do you want to run with me? Donate!', 52, 5000, 'http://embed.bambuser.com/broadcast/5462014');"
 cursor.execute(query)
 query="INSERT INTO challenges(name, description, donators, levying, proof) VALUES ('Hack For Ebola', 'Ebola is an important disease. Hack with me', 51042, 1500000, 'https://www.youtube.com/embed/zO6D_BAuYCI');"
 cursor.execute(query)

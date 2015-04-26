@@ -18,6 +18,7 @@ conn = psycopg2.connect(
 cursor = conn.cursor()
 query="DROP TABLE IF EXISTS challenges;"
 cursor.execute(query)
+conn.commit()
 query="""CREATE TABLE challenges(
   id_challenge SERIAL,
   name VARCHAR(100) NOT NULL,
@@ -34,6 +35,7 @@ query="""CREATE TABLE challenges(
   PRIMARY KEY(id_challenge)
 );
 """
+conn.commit()
 cursor.execute(query)
 query="INSERT INTO challenges(name, description, donators, levying, proof, challengerName,challengerPhoto, longitud, latitud) VALUES ('Running against the current', 'Last months rains and the melting of the snow has caused floods in the riverside of the Ebro in Zaragoza. The farmers of that zone are now in a very bad situation and they need our help. I will be running a 10 kilometers for every 100 euros we raise, giving all the money that I get thanks to sponsors and prizes to help them.', 52, 5000, 'http://embed.bambuser.com/broadcast/5462014', 'Oliver Atom', 'http://images.teinteresa.es/deportes/Oliver-realiza-disparo_TINIMA20120619_0426_18.jpg', 41.39, 0.52);"
 cursor.execute(query)

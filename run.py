@@ -5,6 +5,7 @@ import psycopg2
 import braintree
 from flask import request
 import os
+import urlparse
 
 
 #mysql = MySQL()
@@ -70,7 +71,7 @@ def challenge(challenge):
 		host=url.hostname,
 		port=url.port
 	)
-	
+
 	#project = request.args.get('project', '')
 	conn = psycopg2.connect("dbname='challenge_for_people' user='root' host= " + host + " password='root'")
 	cursor = conn.cursor()

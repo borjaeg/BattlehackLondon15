@@ -1,7 +1,7 @@
 from flask import Flask, render_template, redirect, url_for, session, jsonify
 #from flaskext.mysql import MySQL
 import psycopg2
-#import logging
+import logging
 import braintree
 from flask import request
 import os
@@ -47,6 +47,7 @@ def show_challenges():
 		challenges = cursor.fetchall()
 		return render_template("challenges.html", challenges = challenges)
 	except:
+		logging.exception("Something awful happened!")
 		print "I am unable to connect to the database"
 		return "-1"
 		

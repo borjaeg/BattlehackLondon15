@@ -66,6 +66,13 @@ def projects():
 	projects = cursor.fetchall()
 	return render_template("projects.html", projects = projects)
 
+@app.route("/register_event")
+def register_event():
+	#project = request.args.get('project', '')
+	
+	return render_template("register_event.html")
+
+
 @app.route("/challenge/<challenge>")
 def challenge(challenge):
 	'''
@@ -101,7 +108,7 @@ def create_checkout():
 	print "create checkout"
 	nonce = request.form["payment_method_nonce"]
 	result = braintree.Transaction.sale({
-		"amount": "10.00",
+		"amount": "1.00",
 		"payment_method_nonce": nonce
 	})
 	return render_template("thanks.html");

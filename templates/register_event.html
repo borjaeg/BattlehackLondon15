@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="col-xs-18 col-md-12">
+			<h3 class="metadata"> We can be Heroes </h3>
+		</div>
+		<div class="row">
+			<div class="col-xs-18 col-md-2" style="padding-left:5%;">
+				<p> <b>Your Hero Name: </b></p>
+			</div>
+			<div class="col-xs-18 col-md-4">
+				<input type="text" class="form-control" id="usr">
+			</div>
+		</div>
+		<div class="row" style="margin-top:2%;"> 
+			<div class="col-xs-18 col-md-2" style="padding-left:5%;">
+				<p> <b>Challenge Name: </b></p>
+			</div>
+			<div class="col-xs-18 col-md-4">
+				<input type="text" class="form-control" id="usr">
+			</div>
+		</div>
+		<div class="row" style="margin-top:2%;">
+			<div class="col-xs-18 col-md-2" style="padding-left:5%;">
+				<p> <b>Start Date: </b></p>
+			</div>
+			<div class="col-xs-18 col-md-2">
+				<input type="text" id="start_date" class="datepicker" size="30">
+			</div>
+		</div>
+		<div class="row" style="margin-top:2%;">
+			<div class="col-xs-18 col-md-2" style="padding-left:5%;">
+				<p> <b>End Date: </b></p>
+			</div>
+			<div class="col-xs-18 col-md-2">
+				<input type="text" id="end_date" class="datepicker" size="30">
+			</div>
+		</div>
+		<div class="row" style="margin-top:2%;"> 
+			<div class="col-xs-18 col-md-2" style="padding-left:5%;">
+				<p> <b>How can we follow your heorics? </b></p>
+			</div>
+			<div class="col-xs-18 col-md-2">
+				<img id="youtube" src="http://www.youtube.com/yt/brand/media/image/YouTube-logo-full_color.png" class="follow-logo" id="youtube"/>
+			</div>
+			<div class="col-xs-18 col-md-2">
+				<img id="github" src="http://www.levihackwith.com/wp-content/uploads/2011/10/github-logo.png" class="follow-logo"/>
+			</div>
+			<div class="col-xs-18 col-md-2">
+				<img id="twitter" src="http://upload.wikimedia.org/wikipedia/it/0/09/Twitter_bird_logo.png" class="follow-logo"/>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-18 col-md-2" style="padding-left:5%;">
+				<p> <b id="variable_follow"></b></p>
+			</div>
+			<div class="col-xs-18 col-md-4 variable_text">
+				<input type="text" class="form-control" id="usr">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-18 col-md-offset-2 col-md-3" style="padding-top:5%">
+				<button type="button" class="btn btn-primary btn-lg register">  Register </button>
+			</div>
+			<div class="col-xs-18 col-md-offset-2 col-md-3" style="padding-top:5%">
+				<a href="/"<button type="button" class="btn btn-primary btn-lg register"> Home </button></a>
+			</div>
+		</div>
+	</div>	
+</div>
+<div class="row">
+	<div class="col-md-12" id="result">
+
+	</div>	
+</div>
+</div>
+{% endblock %}

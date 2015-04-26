@@ -2,26 +2,27 @@
 {% block content %}
 <div class="container">
 	<div class="row">
-		<div class="col-md-12 metadata">
-			<h3 style="text-align:center; margin-top:5%;"> Challenge Name</h3>
-		</div>			
-		<div class="col-md-12">
-			<h1 class="data" id="challenge_name" style="text-align:center;"> {{ challenge[1] }}</h1>
-		</div>	
-	</div>
-	<div class="row">
-		<div class="col-md-12 metadata">
-			<h3 style="text-align:center; margin-top: 5%;"> Hero Name</h3>
-		</div>			
-		<div class="col-md-12">
-			<h2 class="data" style="text-align:center;"> {{ challenge[8] }}</h4>
-		</div>	
-	</div>
-	<div class="row">
-		<div class="col-md-12">
-			<h3 class="metadata" style="text-align:center; padding-top: 5%;"> Challenge Description</h3>
-		</div>	
-	</div>
+		<div class="col-md-6">
+			<div class="row">
+				<h3 class="metadata" style="text-align:center; margin-top:5%;"> Challenge Name</h3>	</div>	
+				<div class="row">
+					<h1 class="data"> {{ challenge[1] }}</h1>
+				</div>	
+			</div>	
+			<div class="col-md-6">
+				<div class="row">
+					<h3 class="metadata"style="text-align:center; margin-top: 5%;"> Hero Name</h3>
+				</div>			
+				<div class="row">
+					<h2 class="data" style="text-align:center;"> {{ challenge[8] }}</h2>
+				</div>	
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<h3 class="metadata" style="text-align:center; padding-top: 5%; margin-bottom: 2%;"> Challenge Description</h3>
+			</div>	
+		</div>
 	<div class="row">
 		<div class="col-md-12">
 			<h4 class = "data" style="text-align:center;"> {{ challenge[2] }}</h4>
@@ -29,7 +30,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-9">
-			<h3 class="metadata" style="text-align:center; padding-top: 5%; padding-bottom: 5%;"> Follow the challenge ;-) </h3>
+			<h3 class="metadata" style="text-align:center; padding-top: 5%; padding-bottom: 5%;"> Follow the challenge</h3>
 		</div>	
 	</div>
 	<div class="row">
@@ -47,7 +48,6 @@
 				<div id="dropin"></div>
 				<input id="pay" type="submit" value="Pay $1">
 			</form>
-			<!--<p> <a href="/donate"><button type="button" class="btn btn-primary btn-lg button_donate">  Donate </button></a></p>-->
 		</div>	
 	</div>
 	<div class="row">

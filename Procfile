@@ -1,2 +1,2 @@
-web: gunicorn show_challenges:app
+web: gunicorn run:app
 init: python db_create.py

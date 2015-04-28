@@ -17,14 +17,12 @@ braintree.Configuration.configure(
 )
 
 # Uncomment when deploy to heroku
-host = os.environ['DATABASE_URL']
-#host = 'localhost'
+#host = os.environ['DATABASE_URL']
+host = 'localhost'
 #global_challenge = ''
 
-
-@app.route("/")
-def show_challenges():
-
+def get_connection():
+	'''
 	try:
 		urlparse.uses_netloc.append("postgres")
 		url = urlparse.urlparse(os.environ["DATABASE_URL"])
@@ -36,8 +34,14 @@ def show_challenges():
 		host=url.hostname,
 		port=url.port
 	)
-	
-		#conn = psycopg2.connect("dbname='challenge_for_people' user='root' host= " + host + " password='root'")
+	'''
+	conn = psycopg2.connect("dbname='challenge_for_people' user='root' host= " + host + " password='root'")
+	return conn
+
+@app.route("/")
+def show_challenges():
+	try:
+		conn = get_connection()
 		cursor = conn.cursor()
 		query = "SELECT name FROM challenges;"
 		cursor.execute(query)
@@ -71,21 +75,9 @@ def become_hero():
 
 @app.route("/challenge/<challenge>")
 def challenge(challenge):
-	
-	urlparse.uses_netloc.append("postgres")
-	url = urlparse.urlparse(os.environ["DATABASE_URL"])
-	conn = psycopg2.connect(
-		database=url.path[1:],
-		user=url.username,
-		password=url.password,
-		host=url.hostname,
-		port=url.port
-	)
-	
-	#conn = psycopg2.connect("dbname='challenge_for_people' user='root' host= " + host + " password='root'")
+	conn = get_connection()
 	cursor = conn.cursor()
 	token = client_token()
-	print token
 	session['challenge'] = challenge
 	print "global_challenge %s" % session['challenge']
 	query = "SELECT * FROM challenges WHERE name = '%s'" % challenge
@@ -112,17 +104,8 @@ def create_checkout():
 		"payment_method_nonce": nonce
 	})
 
-	urlparse.uses_netloc.append("postgres")
-	url = urlparse.urlparse(os.environ["DATABASE_URL"])
-	conn = psycopg2.connect(
-		database=url.path[1:],
-		user=url.username,
-		password=url.password,
-		host=url.hostname,
-		port=url.port
-	)
+	conn = get_connection()
 
-	#conn = psycopg2.connect("dbname='challenge_for_people' user='root' host= " + host + " password='root'")
 	print "global challenge %s" % session['challenge']
 	query = "UPDATE challenges SET levying = levying + %d, donators = donators + 1 WHERE name = '%s'" % (int(amount), session['challenge'])
 	print challenge

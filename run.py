@@ -60,11 +60,11 @@ def projects():
 	projects = cursor.fetchall()
 	return render_template("projects.html", projects = projects)
 
-@app.route("/register_event")
+@app.route("/register_challenge")
 def register_event():
 	#project = request.args.get('project', '')
 	
-	return render_template("register_event.html")
+	return render_template("register_challenge.html")
 
 @app.route("/become_hero")
 def become_hero():

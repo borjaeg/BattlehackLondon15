@@ -16,10 +16,9 @@ braintree.Configuration.configure(
 	'beae8f107b64b387a434dbe4b1686a16'
 )
 
-# Uncomment when deploy to heroku
-#host = os.environ['DATABASE_URL']
-host = 'localhost'
-#global_challenge = ''
+app.config['host'] = 'localhost'
+#app.config['host'] = os.environ['DATABASE_URL']
+
 
 def get_connection():
 	'''
